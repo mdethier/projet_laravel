@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    text-align: center;
+    font-size: 20px;
+}
+.title-button {
+    margin: 10px;
+    padding: 30px;
+    font-size: 25px;
+    border-style: double;
+
+}
+.title-button:hover {
+    margin: 10px;
+    padding: 30px;
+    font-size: 40px;
+    color: whitesmoke;
+    border-style:groove;
+    border-color: black;
+    background-color: black;
+
+}
+p {
+    padding: 25px;
+
+}
+p:hover {
+    transform: scale(1, 1.5);
+}
+
+.language-link {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    border-style: groove;
+    border-radius: 100%;
+
+
+}
+.language-link:hover{
+    padding: 20px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border-style: dashed;
+    border-radius: 100%;
+
+
+}
+
