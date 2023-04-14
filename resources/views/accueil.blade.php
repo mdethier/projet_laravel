@@ -9,16 +9,19 @@
 
 </head>
 <body>
-
-    <h1>
-        <button class="title-button">
+    
+    <h1 class="title-style">
             {{$titre}}
-        </button>
+        
     </h1>
 
     @foreach ($languages as $language)
-    <p><a class="language-link" href="http://{{ $language->iso_code }}.nomdedomaine.jsp" title={{$language->www_link_title}}
-        lang="{{$language->iso_code}}">{{$language->www_link_text}}</a></p>
-@endforeach
+
+    <div class="calzone">
+    <a class="fullbox language-link" href="http://{{ $language->iso_code }}.projet-laravel" title={{$language->www_link_title}}
+        lang="{{$language->iso_code}}">{{$language->www_link_text}}</a>
+
+    @endforeach
+    
 </body>
 </html>

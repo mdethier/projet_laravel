@@ -1,50 +1,46 @@
 body {
-    background-color: black;
     text-align: center;
-    font-size: 20px;
-}
-.title-button {
-    margin: 10px;
-    padding: 30px;
     font-size: 25px;
-    border-style: double;
+    background-image:url('/css/pizza.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 
 }
-.title-button:hover {
-    margin: 10px;
-    padding: 30px;
-    font-size: 40px;
+.title-style {
     color: whitesmoke;
-    border-style:groove;
-    border-color: black;
-    background-color: black;
-
+    font-family: cursive;
+    text-decoration: underline;
 }
-p {
-    padding: 25px;
-
+.calzone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
-p:hover {
-    transform: scale(1, 1.5);
+
+.fullbox {
+    font-size: 20px;
+    background-color: darkred;
+    width: 150px;
+    box-shadow: 5px 5px 10px black;
+    border: 3px solid whitesmoke;
+}
+
+.fullbox:hover {
+    box-shadow: 10px 10px 15px black;
+    
+    
+    
 }
 
 .language-link {
     padding: 20px;
-    color: white;
+    margin: 15px;
     text-decoration: none;
-    border-style: groove;
-    border-radius: 100%;
-
+    color: whitesmoke;
+    font-family: cursive;
 
 }
-.language-link:hover{
-    padding: 20px;
-    color: black;
-    background-color: white;
-    text-decoration: none;
-    border-style: dashed;
-    border-radius: 100%;
-
-
-}
-

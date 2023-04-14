@@ -13,8 +13,29 @@ use App\Models\Language;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil',['languages' => Language::all(), 'titre' => "Des langues"]);
-})->name('langues');
+Route::domain('www.projet-laravel')->group(function () {
+    Route::get('/', function () {
+        return view('accueil',['languages' => Language::all(), 'titre' => "Des langues"]);
+    })->name('langues');
+       
+    });
+
+    Route::domain('{iso_code}.projet-laravel')->group(function () {
+        Route::get('/', function ( string $iso_code) {
+           $language = Language::where('iso_code', '=', $iso_code)->first();
+
+           if ($language ['is_active'] == true)
+           return view ('app_active');
+
+           else 
+            return view ('app_inactive');
+         
+        });
+    });
+    
+    
+
+
+
 
 
