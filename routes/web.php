@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Language;
+use Illuminate\Support\Facades\App;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,15 +24,23 @@ Route::domain('www.projet-laravel')->group(function () {
     Route::domain('{iso_code}.projet-laravel')->group(function () {
         Route::get('/', function ( string $iso_code) {
            $language = Language::where('iso_code', '=', $iso_code)->first();
+           $allLanguages = Language::where('iso_code', '!=', $iso_code)->get('iso_code');
+           App::setlocale($iso_code);
+        //    dd($allLanguages);
 
-           if ($language ['is_active'] == true)
-           return view ('app_active');
 
-           else 
-            return view ('app_inactive');
-         
+           if ($language['is_active'] == true) {
+           return view('app_active',['language' => $language, 'allLanguages' => $allLanguages]);
+           }
+           else {
+            return view('app_inactive',['language' => $language, 'allLanguages' => $allLanguages]);
+           }
+
+           
         });
+        
     });
+   
     
     
 
