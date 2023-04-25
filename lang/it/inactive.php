@@ -12,7 +12,11 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
-    'app_inactive.subscribe' => 'Iscriversi',
-
+    
+    'inscris' => 'Iscriversi',
+    'viens' => 'Dai',
+    'bien' => 'Stiamo bene qui',
+    'rejoins' => 'Unisciti a noi',
+    'data' => 'I tuoi dati di posta ORA',
+    'pizza' => 'Ottieni una pizza gratis',
 ];

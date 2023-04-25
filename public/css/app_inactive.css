@@ -13,6 +13,9 @@ html {
 body {
   background: linear-gradient(90deg, darkred, red);
 }
+p {
+  font-family: cursive;
+}
 
 .wrapper {
   height: 100vh;

@@ -26,7 +26,7 @@ Route::domain('www.projet-laravel')->group(function () {
            $language = Language::where('iso_code', '=', $iso_code)->first();
            $allLanguages = Language::where('iso_code', '!=', $iso_code)->get('iso_code');
            App::setlocale($iso_code);
-        //    dd($allLanguages);
+        
 
 
            if ($language['is_active'] == true) {
