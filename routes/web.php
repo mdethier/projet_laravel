@@ -14,37 +14,33 @@ use Illuminate\Support\Facades\App;
 |
 */
 
-Route::domain('www.projet-laravel')->group(function () {
+Route::domain('www.' . env('APP_DOMAIN'))->group(function () {
     Route::get('/', function () {
-        return view('accueil',['languages' => Language::all(), 'titre' => "Des langues"]);
+        return view('accueil', ['languages' => Language::all(), 'titre' => "Des langues"]);
     })->name('langues');
-       
+});
+
+Route::domain('manager.' . env('APP_DOMAIN'))->group(function () {
+    Route::get('/', function () {
+      return view('manager');  
     });
+    
+});
 
-    Route::domain('{iso_code}.projet-laravel')->group(function () {
-        Route::get('/', function ( string $iso_code) {
-           $language = Language::where('iso_code', '=', $iso_code)->first();
-           $allLanguages = Language::where('iso_code', '!=', $iso_code)->get('iso_code');
-           App::setlocale($iso_code);
-        
+Route::domain('{iso_code}.' . env('APP_DOMAIN'))->group(function () {
+    Route::get('/', function (string $iso_code) {
+        $language = Language::where('iso_code', '=', $iso_code)->first();
+
+        App::setlocale($iso_code);
 
 
-           if ($language['is_active'] == true) {
-           return view('app_active',['language' => $language, 'allLanguages' => $allLanguages]);
-           }
-           else {
-            return view('app_inactive',['language' => $language, 'allLanguages' => $allLanguages]);
-           }
 
-           
-        });
-        
+        if ($language['is_active'] == true) {
+            return view('app_active', ['language' => $language]);
+        } else {
+            return view('app_inactive', ['language' => $language]);
+        }
     });
-   
-    
-    
-
-
-
+});
 
 
